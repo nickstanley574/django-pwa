@@ -14,13 +14,19 @@
 <meta name="apple-mobile-web-app-title" content="{{ PWA_APP_NAME }}">
 <meta name="apple-mobile-web-app-status-bar-style" content="{{ PWA_APP_STATUS_BAR_COLOR }}">
 
+<!-- Nick Debugging -->
+<meta name="{{ PWA_APP_ICONS_APPLE }}">
+<meta name="{{ PWA_APP_ICONS_APPLE|length }}">
+<!-- Nick Debugging -->
+
+
 {% if PWA_APP_ICONS_APPLE %}
     {% for icon in PWA_APP_ICONS_APPLE %}
-        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.sizes }}">
     {% endfor %}
 {% else %}
     {% for icon in PWA_APP_ICONS %}
-        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.size }}">
+        <link rel="apple-touch-icon" href="{{ icon.src }}" sizes="{{ icon.sizes }}">
     {% endfor %}
 {% endif %}
 
@@ -36,7 +42,7 @@
 <meta name="msapplication-TileImage" content="{{ icon.src }}">
 
 
-<link rel="icon" sizes="{{ icon.size }}" href="{{ icon.src }}">
+<link rel="icon" sizes="{{ icon.sizes }}" href="{{ icon.src }}">
 {% endwith %}
 
 <script type="text/javascript">
